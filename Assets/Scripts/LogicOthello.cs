@@ -17,8 +17,10 @@ public class LogicOthello : Logic2D
     // true : 유효 데이터 존재.
     public bool setData(int r, int c)
     {
+        // 보드 범위 벗어남 
+        if (r < 0 || r >= 8 || c < 0 || c >= 8) return false;
         // 돌 놓은곳에 돌이 이미 있음.
-        if (!isEmpty(r, c)) return false;
+        if (!isEmpty(r, c)) return false;        
         if (!analyze(r, c)) return false;
 
         setValue(mTurn, r, c);

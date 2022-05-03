@@ -123,6 +123,7 @@ public class OthelloManager : MonoBehaviour
         origin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         lg.checkpos(ref origin); // 소수점 좌표 수정
         Vector2 changed = pos_to_arr(origin);
+
         lg.setData((int)changed.x, (int)changed.y);
     }
 

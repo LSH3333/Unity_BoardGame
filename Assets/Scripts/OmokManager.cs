@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class OmokManager : MonoBehaviour
 {
-    LogicOmok lg = new LogicOmok(19, 19);
+    LogicOmok lg = new LogicOmok(19, 19); // 19 x 19 
     GameObject b_stone, w_stone;
     GameObject[,] ObjArr; // 소환한 stone clone들 저장
     Vector2 origin;
@@ -61,6 +61,10 @@ public class OmokManager : MonoBehaviour
 
         // 보드좌표 -> 배열좌표
         Vector2 arrpos = pos_to_arr(origin);
+
+        // 보드판 벗어난곳 클릭시 아무변화 없이 false return 
+        if ((int)arrpos.x < 0 || (int)arrpos.x > 19 || (int)arrpos.y < 0 || (int)arrpos.y > 19)
+            return false;
 
         // true 리턴 시 오목 완성.
         return lg.setData((int)arrpos.x, (int)arrpos.y);
