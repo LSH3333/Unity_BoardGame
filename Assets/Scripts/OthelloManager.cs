@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
+using MyEngine;
 
 public class OthelloManager : MonoBehaviour
 {
@@ -155,8 +156,8 @@ public class OthelloManager : MonoBehaviour
         int mTurnCopy;
         int[,] mDatCopy;
 
-        mLengthCopy = lg.getLength(); // 초기 mLength 저장
-        mTurnCopy = lg.getTurn(); // 초기 mTurn 저장
+        mLengthCopy = lg.Length; // 초기 mLength 저장
+        mTurnCopy = lg.Turn; // 초기 mTurn 저장
 
         // 초기 mDat 저장
         mDatCopy = new int[8, 8];
@@ -196,7 +197,7 @@ public class OthelloManager : MonoBehaviour
     {
 
 
-        for (int j = 0; j < lg.getLength(); j++)
+        for (int j = 0; j < lg.Length; j++)
         {
             for (int i = 0; i < 12; i++)
             {

@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using MyEngine;
 
 public class OmokManager : MonoBehaviour
 {
-    LogicOmok lg = new LogicOmok(19, 19); // 19 x 19 
+    LogicOmok lg = new LogicOmok(19, 19); // 19 x 19   
+
     GameObject b_stone, w_stone;
     GameObject[,] ObjArr; // 소환한 stone clone들 저장
     Vector2 origin;
@@ -119,8 +121,8 @@ public class OmokManager : MonoBehaviour
 
     void ResultBoard()
     {
-        if(lg.getTurn() == 2)
-        {
+        if(lg.Turn == 2)
+        { 
             res_text.GetComponent<Text>().text = "WHITE WIN";
         }
         else

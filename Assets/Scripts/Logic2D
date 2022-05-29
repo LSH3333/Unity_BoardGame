@@ -13,6 +13,26 @@ public abstract class Logic2D : LogicBase
     protected int mTurn;
     protected int mLength;
 
+    //public int getTurn()
+    //{
+    //    return mTurn;
+    //}
+
+    //public int getLength()
+    //{
+    //    return mLength;
+    //}
+
+    // read only property 
+    public int Length
+    {
+        get { return mLength; }
+    }
+    public int Turn
+    {
+        get { return mTurn; }
+    }
+
     //public KeyValuePair<int, int>[] mPoints = new KeyValuePair<int, int>[DATASIZE];
 
     protected class Point
@@ -116,20 +136,13 @@ public abstract class Logic2D : LogicBase
         mTurn = 3 - mTurn;
     }
 
-    public int getTurn()
-    {
-        return mTurn;
-    }
+    
 
     protected void resetLength()
     {
         mLength = 0;
     }
-
-    public int getLength()
-    {
-        return mLength;
-    }
+   
 
     protected void setValue(int value, int r, int c)
     {
